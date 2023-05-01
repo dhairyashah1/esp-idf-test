@@ -100,23 +100,23 @@ static esp_ble_mesh_light_lightness_setup_srv_t lightness_setup_server = {
 };
 
 /* Light HSL state related context */
-static esp_ble_mesh_light_hsl_state_t hsl_state;
+// static esp_ble_mesh_light_hsl_state_t hsl_state;
 
-/* Light HSL Server related context */
-ESP_BLE_MESH_MODEL_PUB_DEFINE(hsl_pub, 2 + 9, ROLE_NODE);
-static esp_ble_mesh_light_hsl_srv_t hsl_server = {
-    .rsp_ctrl.get_auto_rsp = ESP_BLE_MESH_SERVER_AUTO_RSP,
-    .rsp_ctrl.set_auto_rsp = ESP_BLE_MESH_SERVER_AUTO_RSP,
-    .state = &hsl_state,
-};
+// /* Light HSL Server related context */
+// ESP_BLE_MESH_MODEL_PUB_DEFINE(hsl_pub, 2 + 9, ROLE_NODE);
+// static esp_ble_mesh_light_hsl_srv_t hsl_server = {
+//     .rsp_ctrl.get_auto_rsp = ESP_BLE_MESH_SERVER_AUTO_RSP,
+//     .rsp_ctrl.set_auto_rsp = ESP_BLE_MESH_SERVER_AUTO_RSP,
+//     .state = &hsl_state,
+// };
 
-/* Light HSL Setup Server related context */
-ESP_BLE_MESH_MODEL_PUB_DEFINE(hsl_setup_pub, 2 + 9, ROLE_NODE);
-static esp_ble_mesh_light_hsl_setup_srv_t hsl_setup_server = {
-    .rsp_ctrl.get_auto_rsp = ESP_BLE_MESH_SERVER_AUTO_RSP,
-    .rsp_ctrl.set_auto_rsp = ESP_BLE_MESH_SERVER_AUTO_RSP,
-    .state = &hsl_state,
-};
+// /* Light HSL Setup Server related context */
+// ESP_BLE_MESH_MODEL_PUB_DEFINE(hsl_setup_pub, 2 + 9, ROLE_NODE);
+// static esp_ble_mesh_light_hsl_setup_srv_t hsl_setup_server = {
+//     .rsp_ctrl.get_auto_rsp = ESP_BLE_MESH_SERVER_AUTO_RSP,
+//     .rsp_ctrl.set_auto_rsp = ESP_BLE_MESH_SERVER_AUTO_RSP,
+//     .state = &hsl_state,
+// };
 
 /* Light CTL state related context */
 static esp_ble_mesh_light_ctl_state_t ctl_state;
@@ -144,8 +144,8 @@ static esp_ble_mesh_model_t root_models[] = {
     ESP_BLE_MESH_MODEL_GEN_LEVEL_SRV(&level_pub_0, &level_server_0),
     ESP_BLE_MESH_MODEL_LIGHT_LIGHTNESS_SRV(&lightness_pub, &lightness_server),
     ESP_BLE_MESH_MODEL_LIGHT_LIGHTNESS_SETUP_SRV(&lightness_setup_pub, &lightness_setup_server),
-    ESP_BLE_MESH_MODEL_LIGHT_HSL_SRV(&hsl_pub, &hsl_server),
-    ESP_BLE_MESH_MODEL_LIGHT_HSL_SETUP_SRV(&hsl_setup_pub, &hsl_setup_server),
+    // ESP_BLE_MESH_MODEL_LIGHT_HSL_SRV(&hsl_pub, &hsl_server),
+    // ESP_BLE_MESH_MODEL_LIGHT_HSL_SETUP_SRV(&hsl_setup_pub, &hsl_setup_server),
     ESP_BLE_MESH_MODEL_LIGHT_CTL_SRV(&ctl_pub, &ctl_server),
     ESP_BLE_MESH_MODEL_LIGHT_CTL_SETUP_SRV(&ctl_setup_pub, &ctl_setup_server),
 };
@@ -158,15 +158,15 @@ static esp_ble_mesh_gen_level_srv_t level_server_1 = {
 };
 
 /* Light HSL Hue Server related context */
-ESP_BLE_MESH_MODEL_PUB_DEFINE(hsl_hue_pub, 2 + 5, ROLE_NODE);
-static esp_ble_mesh_light_hsl_hue_srv_t hsl_hue_server = {
-    .rsp_ctrl.get_auto_rsp = ESP_BLE_MESH_SERVER_AUTO_RSP,
-    .rsp_ctrl.set_auto_rsp = ESP_BLE_MESH_SERVER_AUTO_RSP,
-    .state = &hsl_state,
-};
+// ESP_BLE_MESH_MODEL_PUB_DEFINE(hsl_hue_pub, 2 + 5, ROLE_NODE);
+// static esp_ble_mesh_light_hsl_hue_srv_t hsl_hue_server = {
+//     .rsp_ctrl.get_auto_rsp = ESP_BLE_MESH_SERVER_AUTO_RSP,
+//     .rsp_ctrl.set_auto_rsp = ESP_BLE_MESH_SERVER_AUTO_RSP,
+//     .state = &hsl_state,
+// };
 static esp_ble_mesh_model_t hue_models[] = {
     ESP_BLE_MESH_MODEL_GEN_LEVEL_SRV(&level_pub_1, &level_server_1),
-    ESP_BLE_MESH_MODEL_LIGHT_HSL_HUE_SRV(&hsl_hue_pub, &hsl_hue_server),
+    // ESP_BLE_MESH_MODEL_LIGHT_HSL_HUE_SRV(&hsl_hue_pub, &hsl_hue_server),
 };
 
 /* Generic Level Server related context */
@@ -177,15 +177,15 @@ static esp_ble_mesh_gen_level_srv_t level_server_2 = {
 };
 
 /* Light HSL Saturation Server related context */
-ESP_BLE_MESH_MODEL_PUB_DEFINE(hsl_saturation_pub, 2 + 5, ROLE_NODE);
-static esp_ble_mesh_light_hsl_sat_srv_t hsl_saturation_server = {
-    .rsp_ctrl.get_auto_rsp = ESP_BLE_MESH_SERVER_AUTO_RSP,
-    .rsp_ctrl.set_auto_rsp = ESP_BLE_MESH_SERVER_AUTO_RSP,
-    .state = &hsl_state,
-};
+// ESP_BLE_MESH_MODEL_PUB_DEFINE(hsl_saturation_pub, 2 + 5, ROLE_NODE);
+// static esp_ble_mesh_light_hsl_sat_srv_t hsl_saturation_server = {
+//     .rsp_ctrl.get_auto_rsp = ESP_BLE_MESH_SERVER_AUTO_RSP,
+//     .rsp_ctrl.set_auto_rsp = ESP_BLE_MESH_SERVER_AUTO_RSP,
+//     .state = &hsl_state,
+// };
 static esp_ble_mesh_model_t saturation_models[] = {
     ESP_BLE_MESH_MODEL_GEN_LEVEL_SRV(&level_pub_2, &level_server_2),
-    ESP_BLE_MESH_MODEL_LIGHT_HSL_HUE_SRV(&hsl_saturation_pub, &hsl_saturation_server),
+    // ESP_BLE_MESH_MODEL_LIGHT_HSL_HUE_SRV(&hsl_saturation_pub, &hsl_saturation_server),
 };
 
 /* Generic Level Server related context */
@@ -316,44 +316,44 @@ static int16_t convert_temperature_to_level(uint16_t temp, uint16_t min, uint16_
     return (int16_t) (tmp + INT16_MIN);
 }
 
-uint16_t covert_level_to_temperature(int16_t level, uint16_t min, uint16_t max)
+uint16_t convert_level_to_temperature(int16_t level, uint16_t min, uint16_t max)
 {
     float diff = (float) (max - min) / UINT16_MAX;
     uint16_t tmp = (uint16_t) ((level - INT16_MIN) * diff);
     return (uint16_t) (min + tmp);
 }
 
-// static void example_handle_gen_onoff_msg(esp_ble_mesh_model_t *model,
-//                                          esp_ble_mesh_msg_ctx_t *ctx,
-//                                          esp_ble_mesh_server_recv_gen_onoff_set_t *set)
-// {
-//     esp_ble_mesh_gen_onoff_srv_t *srv = model->user_data;
+static void example_handle_gen_onoff_msg(esp_ble_mesh_model_t *model,
+                                         esp_ble_mesh_msg_ctx_t *ctx,
+                                         esp_ble_mesh_server_recv_gen_onoff_set_t *set)
+{
+    esp_ble_mesh_gen_onoff_srv_t *srv = model->user_data;
 
-//     switch (ctx->recv_op) {
-//     case ESP_BLE_MESH_MODEL_OP_GEN_ONOFF_GET:
-//         esp_ble_mesh_server_model_send_msg(model, ctx,
-//             ESP_BLE_MESH_MODEL_OP_GEN_ONOFF_STATUS, sizeof(srv->state.onoff), &srv->state.onoff);
-//         break;
-//     case ESP_BLE_MESH_MODEL_OP_GEN_ONOFF_SET:
-//     case ESP_BLE_MESH_MODEL_OP_GEN_ONOFF_SET_UNACK:
-//         if (set->op_en == false) {
-//             srv->state.onoff = set->onoff;
-//         } else {
-//             /* TODO: Delay and state transition */
-//             srv->state.onoff = set->onoff;
-//         }
-//         if (ctx->recv_op == ESP_BLE_MESH_MODEL_OP_GEN_ONOFF_SET) {
-//             esp_ble_mesh_server_model_send_msg(model, ctx,
-//                 ESP_BLE_MESH_MODEL_OP_GEN_ONOFF_STATUS, sizeof(srv->state.onoff), &srv->state.onoff);
-//         }
-//         esp_ble_mesh_model_publish(model, ESP_BLE_MESH_MODEL_OP_GEN_ONOFF_STATUS,
-//             sizeof(srv->state.onoff), &srv->state.onoff, ROLE_NODE);
-//         example_change_led_state(model, ctx, srv->state.onoff);
-//         break;
-//     default:
-//         break;
-//     }
-// }
+    switch (ctx->recv_op) {
+    case ESP_BLE_MESH_MODEL_OP_GEN_ONOFF_GET:
+        esp_ble_mesh_server_model_send_msg(model, ctx,
+            ESP_BLE_MESH_MODEL_OP_GEN_ONOFF_STATUS, sizeof(srv->state.onoff), &srv->state.onoff);
+        break;
+    case ESP_BLE_MESH_MODEL_OP_GEN_ONOFF_SET:
+    case ESP_BLE_MESH_MODEL_OP_GEN_ONOFF_SET_UNACK:
+        if (set->op_en == false) {
+            srv->state.onoff = set->onoff;
+        } else {
+            /* TODO: Delay and state transition */
+            srv->state.onoff = set->onoff;
+        }
+        if (ctx->recv_op == ESP_BLE_MESH_MODEL_OP_GEN_ONOFF_SET) {
+            esp_ble_mesh_server_model_send_msg(model, ctx,
+                ESP_BLE_MESH_MODEL_OP_GEN_ONOFF_STATUS, sizeof(srv->state.onoff), &srv->state.onoff);
+        }
+        esp_ble_mesh_model_publish(model, ESP_BLE_MESH_MODEL_OP_GEN_ONOFF_STATUS,
+            sizeof(srv->state.onoff), &srv->state.onoff, ROLE_NODE);
+        example_change_led_state(model, ctx, srv->state.onoff);
+        break;
+    default:
+        break;
+    }
+}
 
 static void example_ble_mesh_provisioning_cb(esp_ble_mesh_prov_cb_event_t event,
                                              esp_ble_mesh_prov_cb_param_t *param)
@@ -396,6 +396,8 @@ static void example_ble_mesh_generic_server_cb(esp_ble_mesh_generic_server_cb_ev
     uint16_t primary_addr;
     uint16_t lightness;
     int16_t level;
+    esp_ble_mesh_gen_onoff_srv_t *srv;
+    esp_ble_mesh_gen_level_srv_t *srv2;
 
     ESP_LOGI(TAG, "event 0x%02x, opcode 0x%04x, src 0x%04x, dst 0x%04x",
         event, param->ctx.recv_op, param->ctx.addr, param->ctx.recv_dst);
@@ -403,13 +405,13 @@ static void example_ble_mesh_generic_server_cb(esp_ble_mesh_generic_server_cb_ev
     primary_addr = esp_ble_mesh_get_primary_element_address();
 
     switch (event) {
-    case ESP_BLE_MESH_GENERIC_SERVER_STATE_CHANGE_EVT:
-        switch (param->ctx.recv_op) {
-        case ESP_BLE_MESH_MODEL_OP_GEN_ONOFF_SET:
-        case ESP_BLE_MESH_MODEL_OP_GEN_ONOFF_SET_UNACK:
-            /* Generic OnOff Server Model - Primary Element */
+    case ESP_BLE_MESH_GENERIC_SERVER_STATE_CHANGE_EVT: ///////////////////
+        ESP_LOGI(TAG, "ESP_BLE_MESH_GENERIC_SERVER_STATE_CHANGE_EVT");
+        if (param->ctx.recv_op == ESP_BLE_MESH_MODEL_OP_GEN_ONOFF_SET ||
+            param->ctx.recv_op == ESP_BLE_MESH_MODEL_OP_GEN_ONOFF_SET_UNACK) {
+            ESP_LOGI(TAG, "Received Message Opcode: 0x%08x", param->ctx.recv_op);
+            ESP_LOGI(TAG, "onoff 0x%02x", param->value.state_change.onoff_set.onoff);
             example_change_led_state(param->model, &param->ctx, param->value.state_change.onoff_set.onoff);
-            /* Update bound states */
             if (param->value.state_change.onoff_set.onoff == LED_ON) {
                 if (lightness_state.lightness_default == 0x0000) {
                     lightness = lightness_state.lightness_last;
@@ -422,15 +424,15 @@ static void example_ble_mesh_generic_server_cb(esp_ble_mesh_generic_server_cb_ev
                 esp_ble_mesh_server_model_update_state(lightness_server.model, ESP_BLE_MESH_LIGHT_LIGHTNESS_LINEAR_STATE, &state);
                 state.gen_level.level = lightness - 32768;
                 esp_ble_mesh_server_model_update_state(level_server_0.model, ESP_BLE_MESH_GENERIC_LEVEL_STATE, &state);
-                state.light_hsl_lightness.lightness = lightness;
-                esp_ble_mesh_server_model_update_state(hsl_server.model, ESP_BLE_MESH_LIGHT_HSL_LIGHTNESS_STATE, &state);
+                // state.light_hsl_lightness.lightness = lightness;
+                // esp_ble_mesh_server_model_update_state(hsl_server.model, ESP_BLE_MESH_LIGHT_HSL_LIGHTNESS_STATE, &state);
                 state.light_ctl_lightness.lightness = lightness;
                 esp_ble_mesh_server_model_update_state(ctl_server.model, ESP_BLE_MESH_LIGHT_CTL_LIGHTNESS_STATE, &state);
-            }
-            break;
-        case ESP_BLE_MESH_MODEL_OP_GEN_LEVEL_SET:
-        case ESP_BLE_MESH_MODEL_OP_GEN_LEVEL_SET_UNACK:
-            /* Generic Level Server Model - Primary/Secondary Element(s) */
+            }    
+        }
+        else if (param->ctx.recv_op == ESP_BLE_MESH_MODEL_OP_GEN_LEVEL_SET ||
+            param->ctx.recv_op == ESP_BLE_MESH_MODEL_OP_GEN_LEVEL_SET_UNACK){
+            ESP_LOGI(TAG, "Received Message Opcode: 0x%08x", param->ctx.recv_op);
             ESP_LOGI(TAG, "level 0x%04x", param->value.state_change.level_set.level);
             /* Update bound states */
             level = param->value.state_change.level_set.level;
@@ -442,41 +444,131 @@ static void example_ble_mesh_generic_server_cb(esp_ble_mesh_generic_server_cb_ev
                 esp_ble_mesh_server_model_update_state(lightness_server.model, ESP_BLE_MESH_LIGHT_LIGHTNESS_LINEAR_STATE, &state);
                 state.gen_onoff.onoff = (level + 32768) ? LED_ON : LED_OFF;
                 esp_ble_mesh_server_model_update_state(onoff_server.model, ESP_BLE_MESH_GENERIC_ONOFF_STATE, &state);
-                state.light_hsl_lightness.lightness = level + 32768;
-                esp_ble_mesh_server_model_update_state(hsl_server.model, ESP_BLE_MESH_LIGHT_HSL_LIGHTNESS_STATE, &state);
+                // state.light_hsl_lightness.lightness = level + 32768;
+                // esp_ble_mesh_server_model_update_state(hsl_server.model, ESP_BLE_MESH_LIGHT_HSL_LIGHTNESS_STATE, &state);
                 state.light_ctl_lightness.lightness = level + 32768;
                 esp_ble_mesh_server_model_update_state(ctl_server.model, ESP_BLE_MESH_LIGHT_CTL_LIGHTNESS_STATE, &state);
-            } else if (param->model->element->element_addr == primary_addr + 1) {
-                /* Change corresponding bound states in hue element */
-                state.light_hsl_hue.hue = level + 32768;
-                esp_ble_mesh_server_model_update_state(hsl_hue_server.model, ESP_BLE_MESH_LIGHT_HSL_HUE_STATE, &state);
-            } else if (param->model->element->element_addr == primary_addr + 2) {
-                /* Change corresponding bound states in saturation element */
-                state.light_hsl_saturation.saturation = level + 32768;
-                esp_ble_mesh_server_model_update_state(hsl_saturation_server.model, ESP_BLE_MESH_LIGHT_HSL_SATURATION_STATE, &state);
+            // } else if (param->model->element->element_addr == primary_addr + 1) {
+            //     /* Change corresponding bound states in hue element */
+            //     state.light_hsl_hue.hue = level + 32768;
+            //     esp_ble_mesh_server_model_update_state(hsl_hue_server.model, ESP_BLE_MESH_LIGHT_HSL_HUE_STATE, &state);
+            // } else if (param->model->element->element_addr == primary_addr + 2) {
+            //     /* Change corresponding bound states in saturation element */
+            //     state.light_hsl_saturation.saturation = level + 32768;
+            //     esp_ble_mesh_server_model_update_state(hsl_saturation_server.model, ESP_BLE_MESH_LIGHT_HSL_SATURATION_STATE, &state);
             } else if (param->model->element->element_addr == primary_addr + 3) {
                 /* Change corresponding bound states in temperature element */
-                state.light_ctl_temp_delta_uv.temperature = covert_level_to_temperature(level,
+                state.light_ctl_temp_delta_uv.temperature = convert_level_to_temperature(level,
                     ctl_temperature_server.state->temperature_range_min, ctl_temperature_server.state->temperature_range_max);
                 state.light_ctl_temp_delta_uv.delta_uv = ctl_temperature_server.state->delta_uv;
                 esp_ble_mesh_server_model_update_state(ctl_temperature_server.model, ESP_BLE_MESH_LIGHT_HSL_SATURATION_STATE, &state);
             }
-            break;
-        case ESP_BLE_MESH_MODEL_OP_GEN_DEF_TRANS_TIME_SET:
-        case ESP_BLE_MESH_MODEL_OP_GEN_DEF_TRANS_TIME_SET_UNACK:
-            /* Generic Default Transition Time Server Model - Primary Element */
-            ESP_LOGI(TAG, "Default transition time 0x%02x", param->value.state_change.def_trans_time_set.trans_time);
-            break;
-        case ESP_BLE_MESH_MODEL_OP_GEN_ONPOWERUP_SET:
-        case ESP_BLE_MESH_MODEL_OP_GEN_ONPOWERUP_SET_UNACK:
-            /* Generic Power OnOff Setup Server Model - Primary Element */
-            ESP_LOGI(TAG, "onpowerup 0x%02x", param->value.state_change.onpowerup_set.onpowerup);
-            break;
+        }
+        break; 
+
+    case ESP_BLE_MESH_GENERIC_SERVER_RECV_GET_MSG_EVT:
+        ESP_LOGI(TAG, "ESP_BLE_MESH_GENERIC_SERVER_RECV_GET_MSG_EVT");
+        if (param->ctx.recv_op == ESP_BLE_MESH_MODEL_OP_GEN_ONOFF_GET) {
+            ESP_LOGI(TAG, "Received Message Opcode: 0x%08x", param->ctx.recv_op);
+            srv = param->model->user_data;
+            ESP_LOGI(TAG, "onoff 0x%02x", srv->state.onoff);
+            example_handle_gen_onoff_msg(param->model, &param->ctx, NULL);
+        }
+        else if (param->ctx.recv_op == ESP_BLE_MESH_MODEL_OP_GEN_LEVEL_GET) {
+            ESP_LOGI(TAG, "Received Message Opcode: 0x%08x", param->ctx.recv_op);
+            srv2 = param->model->user_data;
+            ESP_LOGI(TAG, "level 0x%04x", srv2->state.level);
+            example_handle_gen_onoff_msg(param->model, &param->ctx, NULL);
+        }
+        break;
+    case ESP_BLE_MESH_GENERIC_SERVER_RECV_SET_MSG_EVT:
+        ESP_LOGI(TAG, "ESP_BLE_MESH_GENERIC_SERVER_RECV_SET_MSG_EVT");
+        if (param->ctx.recv_op == ESP_BLE_MESH_MODEL_OP_GEN_ONOFF_SET ||
+            param->ctx.recv_op == ESP_BLE_MESH_MODEL_OP_GEN_ONOFF_SET_UNACK) {
+            ESP_LOGI(TAG, "onoff 0x%02x, tid 0x%02x", param->value.set.onoff.onoff, param->value.set.onoff.tid);
+            if (param->value.set.onoff.op_en) {
+                ESP_LOGI(TAG, "trans_time 0x%02x, delay 0x%02x",
+                    param->value.set.onoff.trans_time, param->value.set.onoff.delay);
+            }
+            example_handle_gen_onoff_msg(param->model, &param->ctx, &param->value.set.onoff);
         }
         break;
     default:
         ESP_LOGE(TAG, "Unknown Generic Server event 0x%02x", event);
         break;
+        // switch (param->ctx.recv_op) {
+        // case ESP_BLE_MESH_MODEL_OP_GEN_ONOFF_SET:
+        // case ESP_BLE_MESH_MODEL_OP_GEN_ONOFF_SET_UNACK:
+        //     /* Generic OnOff Server Model - Primary Element */
+        //     ESP_LOGI(TAG, "onoff 0x%02x", param->value.state_change.onoff_set.onoff);
+        //     example_change_led_state(param->model, &param->ctx, param->value.state_change.onoff_set.onoff);
+        //     /* Update bound states */
+        //     if (param->value.state_change.onoff_set.onoff == LED_ON) {
+        //         if (lightness_state.lightness_default == 0x0000) {
+        //             lightness = lightness_state.lightness_last;
+        //         } else {
+        //             lightness = lightness_state.lightness_default;
+        //         }
+        //         state.light_lightness_actual.lightness = lightness;
+        //         esp_ble_mesh_server_model_update_state(lightness_server.model, ESP_BLE_MESH_LIGHT_LIGHTNESS_ACTUAL_STATE, &state);
+        //         state.light_lightness_linear.lightness = convert_lightness_actual_to_linear(lightness);
+        //         esp_ble_mesh_server_model_update_state(lightness_server.model, ESP_BLE_MESH_LIGHT_LIGHTNESS_LINEAR_STATE, &state);
+        //         state.gen_level.level = lightness - 32768;
+        //         esp_ble_mesh_server_model_update_state(level_server_0.model, ESP_BLE_MESH_GENERIC_LEVEL_STATE, &state);
+        //         // state.light_hsl_lightness.lightness = lightness;
+        //         // esp_ble_mesh_server_model_update_state(hsl_server.model, ESP_BLE_MESH_LIGHT_HSL_LIGHTNESS_STATE, &state);
+        //         state.light_ctl_lightness.lightness = lightness;
+        //         esp_ble_mesh_server_model_update_state(ctl_server.model, ESP_BLE_MESH_LIGHT_CTL_LIGHTNESS_STATE, &state);
+        //     }
+        //     break;
+
+        // case ESP_BLE_MESH_MODEL_OP_GEN_LEVEL_SET:
+        // case ESP_BLE_MESH_MODEL_OP_GEN_LEVEL_SET_UNACK:
+        //     /* Generic Level Server Model - Primary/Secondary Element(s) */
+        //     ESP_LOGI(TAG, "level 0x%04x", param->value.state_change.level_set.level);
+        //     /* Update bound states */
+        //     level = param->value.state_change.level_set.level;
+        //     if (param->model->element->element_addr == primary_addr) {
+        //         /* Change corresponding bound states in root element */
+        //         state.light_lightness_actual.lightness = level + 32768;
+        //         esp_ble_mesh_server_model_update_state(lightness_server.model, ESP_BLE_MESH_LIGHT_LIGHTNESS_ACTUAL_STATE, &state);
+        //         state.light_lightness_linear.lightness = convert_lightness_actual_to_linear(level + 32768);
+        //         esp_ble_mesh_server_model_update_state(lightness_server.model, ESP_BLE_MESH_LIGHT_LIGHTNESS_LINEAR_STATE, &state);
+        //         state.gen_onoff.onoff = (level + 32768) ? LED_ON : LED_OFF;
+        //         esp_ble_mesh_server_model_update_state(onoff_server.model, ESP_BLE_MESH_GENERIC_ONOFF_STATE, &state);
+        //         // state.light_hsl_lightness.lightness = level + 32768;
+        //         // esp_ble_mesh_server_model_update_state(hsl_server.model, ESP_BLE_MESH_LIGHT_HSL_LIGHTNESS_STATE, &state);
+        //         state.light_ctl_lightness.lightness = level + 32768;
+        //         esp_ble_mesh_server_model_update_state(ctl_server.model, ESP_BLE_MESH_LIGHT_CTL_LIGHTNESS_STATE, &state);
+        //     // } else if (param->model->element->element_addr == primary_addr + 1) {
+        //     //     /* Change corresponding bound states in hue element */
+        //     //     state.light_hsl_hue.hue = level + 32768;
+        //     //     esp_ble_mesh_server_model_update_state(hsl_hue_server.model, ESP_BLE_MESH_LIGHT_HSL_HUE_STATE, &state);
+        //     // } else if (param->model->element->element_addr == primary_addr + 2) {
+        //     //     /* Change corresponding bound states in saturation element */
+        //     //     state.light_hsl_saturation.saturation = level + 32768;
+        //     //     esp_ble_mesh_server_model_update_state(hsl_saturation_server.model, ESP_BLE_MESH_LIGHT_HSL_SATURATION_STATE, &state);
+        //     } else if (param->model->element->element_addr == primary_addr + 3) {
+        //         /* Change corresponding bound states in temperature element */
+        //         state.light_ctl_temp_delta_uv.temperature = convert_level_to_temperature(level,
+        //             ctl_temperature_server.state->temperature_range_min, ctl_temperature_server.state->temperature_range_max);
+        //         state.light_ctl_temp_delta_uv.delta_uv = ctl_temperature_server.state->delta_uv;
+        //         esp_ble_mesh_server_model_update_state(ctl_temperature_server.model, ESP_BLE_MESH_LIGHT_HSL_SATURATION_STATE, &state);
+        //     }
+        //     break;
+        // case ESP_BLE_MESH_MODEL_OP_GEN_DEF_TRANS_TIME_SET:
+        // case ESP_BLE_MESH_MODEL_OP_GEN_DEF_TRANS_TIME_SET_UNACK:
+        //     /* Generic Default Transition Time Server Model - Primary Element */
+        //     ESP_LOGI(TAG, "Default transition time 0x%02x", param->value.state_change.def_trans_time_set.trans_time);
+        //     break;
+        // case ESP_BLE_MESH_MODEL_OP_GEN_ONPOWERUP_SET:
+        // case ESP_BLE_MESH_MODEL_OP_GEN_ONPOWERUP_SET_UNACK:
+        //     /* Generic Power OnOff Setup Server Model - Primary Element */
+        //     ESP_LOGI(TAG, "onpowerup 0x%02x", param->value.state_change.onpowerup_set.onpowerup);
+        //     break;
+        // }
+        // break;
+
     }
 }
 
@@ -491,9 +583,10 @@ static void example_ble_mesh_lighting_server_cb(esp_ble_mesh_lighting_server_cb_
 
     switch (event) {
     case ESP_BLE_MESH_LIGHTING_SERVER_STATE_CHANGE_EVT:
+        ESP_LOGI(TAG, "ESP_BLE_MESH_LIGHTING_SERVER_STATE_CHANGE_EVT");
         switch (param->ctx.recv_op) {
-        case ESP_BLE_MESH_MODEL_OP_LIGHT_LIGHTNESS_SET:
-        case ESP_BLE_MESH_MODEL_OP_LIGHT_LIGHTNESS_SET_UNACK:
+        case (ESP_BLE_MESH_MODEL_OP_LIGHT_LIGHTNESS_SET || ESP_BLE_MESH_MODEL_OP_LIGHT_LIGHTNESS_SET_UNACK):
+            ESP_LOGI(TAG, "Received Message Opcode: 0x%08x", param->ctx.recv_op);
             /* Light Lightness Server Model - Primary Element */
             ESP_LOGI(TAG, "lightness actual 0x%04x", param->value.state_change.lightness_set.lightness);
             /* Update bound states */
@@ -504,13 +597,14 @@ static void example_ble_mesh_lighting_server_cb(esp_ble_mesh_lighting_server_cb_
             esp_ble_mesh_server_model_update_state(level_server_0.model, ESP_BLE_MESH_GENERIC_LEVEL_STATE, &state);
             state.gen_onoff.onoff = lightness ? LED_ON : LED_OFF;
             esp_ble_mesh_server_model_update_state(onoff_server.model, ESP_BLE_MESH_GENERIC_ONOFF_STATE, &state);
-            state.light_hsl_lightness.lightness = lightness;
-            esp_ble_mesh_server_model_update_state(hsl_server.model, ESP_BLE_MESH_LIGHT_HSL_LIGHTNESS_STATE, &state);
+            // state.light_hsl_lightness.lightness = lightness;
+            // esp_ble_mesh_server_model_update_state(hsl_server.model, ESP_BLE_MESH_LIGHT_HSL_LIGHTNESS_STATE, &state);
             state.light_ctl_lightness.lightness = lightness;
             esp_ble_mesh_server_model_update_state(ctl_server.model, ESP_BLE_MESH_LIGHT_CTL_LIGHTNESS_STATE, &state);
             break;
         case ESP_BLE_MESH_MODEL_OP_LIGHT_LIGHTNESS_LINEAR_SET:
         case ESP_BLE_MESH_MODEL_OP_LIGHT_LIGHTNESS_LINEAR_SET_UNACK:
+            ESP_LOGI(TAG, "Received Message Opcode: 0x%08x", param->ctx.recv_op);
             /* Light Lightness Server Model - Primary Element */
             ESP_LOGI(TAG, "lightness linear 0x%04x", param->value.state_change.lightness_linear_set.lightness);
             /* Update bound states */
@@ -521,18 +615,20 @@ static void example_ble_mesh_lighting_server_cb(esp_ble_mesh_lighting_server_cb_
             esp_ble_mesh_server_model_update_state(level_server_0.model, ESP_BLE_MESH_GENERIC_LEVEL_STATE, &state);
             state.gen_onoff.onoff = lightness ? LED_ON : LED_OFF;
             esp_ble_mesh_server_model_update_state(onoff_server.model, ESP_BLE_MESH_GENERIC_ONOFF_STATE, &state);
-            state.light_hsl_lightness.lightness = lightness;
-            esp_ble_mesh_server_model_update_state(hsl_server.model, ESP_BLE_MESH_LIGHT_HSL_LIGHTNESS_STATE, &state);
+            // state.light_hsl_lightness.lightness = lightness;
+            // esp_ble_mesh_server_model_update_state(hsl_server.model, ESP_BLE_MESH_LIGHT_HSL_LIGHTNESS_STATE, &state);
             state.light_ctl_lightness.lightness = lightness;
             esp_ble_mesh_server_model_update_state(ctl_server.model, ESP_BLE_MESH_LIGHT_CTL_LIGHTNESS_STATE, &state);
             break;
         case ESP_BLE_MESH_MODEL_OP_LIGHT_LIGHTNESS_DEFAULT_SET:
         case ESP_BLE_MESH_MODEL_OP_LIGHT_LIGHTNESS_DEFAULT_SET_UNACK:
+            ESP_LOGI(TAG, "Received Message Opcode: 0x%08x", param->ctx.recv_op);
             /* Light Lightness Setup Server Model - Primary Element */
             ESP_LOGI(TAG, "lightness default 0x%04x", param->value.state_change.lightness_default_set.lightness);
             break;
         case ESP_BLE_MESH_MODEL_OP_LIGHT_LIGHTNESS_RANGE_SET:
         case ESP_BLE_MESH_MODEL_OP_LIGHT_LIGHTNESS_RANGE_SET_UNACK:
+            ESP_LOGI(TAG, "Received Message Opcode: 0x%08x", param->ctx.recv_op);
             /* Light Lightness Setup Server Model - Primary Element */
             ESP_LOGI(TAG, "lightness min 0x%04x, max 0x%04x",
                 param->value.state_change.lightness_range_set.range_min,
@@ -540,6 +636,7 @@ static void example_ble_mesh_lighting_server_cb(esp_ble_mesh_lighting_server_cb_
             break;
         case ESP_BLE_MESH_MODEL_OP_LIGHT_CTL_SET:
         case ESP_BLE_MESH_MODEL_OP_LIGHT_CTL_SET_UNACK:
+            ESP_LOGI(TAG, "Received Message Opcode: 0x%08x", param->ctx.recv_op);
             /* Light CTL Server Model - Primary Element */
             ESP_LOGI(TAG, "lightness 0x%04x, temperature 0x%04x, delta uv 0x%04x",
                 param->value.state_change.ctl_set.lightness,
@@ -555,14 +652,15 @@ static void example_ble_mesh_lighting_server_cb(esp_ble_mesh_lighting_server_cb_
             esp_ble_mesh_server_model_update_state(level_server_0.model, ESP_BLE_MESH_GENERIC_LEVEL_STATE, &state);
             state.gen_onoff.onoff = lightness ? LED_ON : LED_OFF;
             esp_ble_mesh_server_model_update_state(onoff_server.model, ESP_BLE_MESH_GENERIC_ONOFF_STATE, &state);
-            state.light_hsl_lightness.lightness = lightness;
-            esp_ble_mesh_server_model_update_state(hsl_server.model, ESP_BLE_MESH_LIGHT_HSL_LIGHTNESS_STATE, &state);
+            // state.light_hsl_lightness.lightness = lightness;
+            // esp_ble_mesh_server_model_update_state(hsl_server.model, ESP_BLE_MESH_LIGHT_HSL_LIGHTNESS_STATE, &state);
             state.gen_level.level = convert_temperature_to_level(param->value.state_change.ctl_set.temperature,
                 ctl_state.temperature_range_min, ctl_state.temperature_range_max);
             esp_ble_mesh_server_model_update_state(level_server_3.model, ESP_BLE_MESH_GENERIC_LEVEL_STATE, &state);
             break;
         case ESP_BLE_MESH_MODEL_OP_LIGHT_CTL_TEMPERATURE_SET:
         case ESP_BLE_MESH_MODEL_OP_LIGHT_CTL_TEMPERATURE_SET_UNACK:
+            ESP_LOGI(TAG, "Received Message Opcode: 0x%08x", param->ctx.recv_op);
             /* Light CTL Temperature Server Model - Secondary Element */
             ESP_LOGI(TAG, "temperature 0x%04x, delta uv 0x%04x",
                 param->value.state_change.ctl_temp_set.temperature,
@@ -573,6 +671,7 @@ static void example_ble_mesh_lighting_server_cb(esp_ble_mesh_lighting_server_cb_
             break;
         case ESP_BLE_MESH_MODEL_OP_LIGHT_CTL_DEFAULT_SET:
         case ESP_BLE_MESH_MODEL_OP_LIGHT_CTL_DEFAULT_SET_UNACK:
+            ESP_LOGI(TAG, "Received Message Opcode: 0x%08x", param->ctx.recv_op);
             /* Light CTL Setup Server Model - Primary Element */
             ESP_LOGI(TAG, "lightness 0x%04x, temperature 0x%04x, delta uv 0x%04x",
                 param->value.state_change.ctl_default_set.lightness,
@@ -581,47 +680,48 @@ static void example_ble_mesh_lighting_server_cb(esp_ble_mesh_lighting_server_cb_
             break;
         case ESP_BLE_MESH_MODEL_OP_LIGHT_CTL_TEMPERATURE_RANGE_SET:
         case ESP_BLE_MESH_MODEL_OP_LIGHT_CTL_TEMPERATURE_RANGE_SET_UNACK:
+            ESP_LOGI(TAG, "Received Message Opcode: 0x%08x", param->ctx.recv_op);
             /* Light CTL Setup Server Model - Primary Element */
             ESP_LOGI(TAG, "temperature min 0x%04x, max 0x%04x",
                 param->value.state_change.ctl_temp_range_set.range_min,
                 param->value.state_change.ctl_temp_range_set.range_max);
             break;
-        case ESP_BLE_MESH_MODEL_OP_LIGHT_HSL_SET:
-        case ESP_BLE_MESH_MODEL_OP_LIGHT_HSL_SET_UNACK:
-            /* Light HSL Server Model - Primary Element */
-            ESP_LOGI(TAG, "lightness 0x%04x, hue 0x%04x, saturation 0x%04x",
-                param->value.state_change.hsl_set.lightness,
-                param->value.state_change.hsl_set.hue,
-                param->value.state_change.hsl_set.saturation);
-            /* Update bound states */
-            lightness = param->value.state_change.hsl_set.lightness;
-            state.light_lightness_actual.lightness = lightness;
-            esp_ble_mesh_server_model_update_state(lightness_server.model, ESP_BLE_MESH_LIGHT_LIGHTNESS_ACTUAL_STATE, &state);
-            state.light_lightness_linear.lightness = convert_lightness_actual_to_linear(lightness);
-            esp_ble_mesh_server_model_update_state(lightness_server.model, ESP_BLE_MESH_LIGHT_LIGHTNESS_LINEAR_STATE, &state);
-            state.gen_level.level = lightness - 32768;
-            esp_ble_mesh_server_model_update_state(level_server_0.model, ESP_BLE_MESH_GENERIC_LEVEL_STATE, &state);
-            state.gen_onoff.onoff = lightness ? LED_ON : LED_OFF;
-            esp_ble_mesh_server_model_update_state(onoff_server.model, ESP_BLE_MESH_GENERIC_ONOFF_STATE, &state);
-            state.light_ctl_lightness.lightness = lightness;
-            esp_ble_mesh_server_model_update_state(ctl_server.model, ESP_BLE_MESH_LIGHT_CTL_LIGHTNESS_STATE, &state);
-            break;
-        case ESP_BLE_MESH_MODEL_OP_LIGHT_HSL_HUE_SET:
-        case ESP_BLE_MESH_MODEL_OP_LIGHT_HSL_HUE_SET_UNACK:
-            /* Light HSL Hue Server Model - Secondary Element */
-            ESP_LOGI(TAG, "hue 0x%04x", param->value.state_change.hsl_hue_set.hue);
-            /* Update bound states */
-            state.gen_level.level = param->value.state_change.hsl_hue_set.hue - 32768;
-            esp_ble_mesh_server_model_update_state(level_server_1.model, ESP_BLE_MESH_GENERIC_LEVEL_STATE, &state);
-            break;
-        case ESP_BLE_MESH_MODEL_OP_LIGHT_HSL_SATURATION_SET:
-        case ESP_BLE_MESH_MODEL_OP_LIGHT_HSL_SATURATION_SET_UNACK:
-            /* Light HSL Saturation Server Model - Secondary Element */
-            ESP_LOGI(TAG, "saturation 0x%04x", param->value.state_change.hsl_saturation_set.saturation);
-            /* Update bound states */
-            state.gen_level.level = param->value.state_change.hsl_saturation_set.saturation - 32768;
-            esp_ble_mesh_server_model_update_state(level_server_2.model, ESP_BLE_MESH_GENERIC_LEVEL_STATE, &state);
-            break;
+        // case ESP_BLE_MESH_MODEL_OP_LIGHT_HSL_SET:
+        // case ESP_BLE_MESH_MODEL_OP_LIGHT_HSL_SET_UNACK:
+        //     /* Light HSL Server Model - Primary Element */
+        //     ESP_LOGI(TAG, "lightness 0x%04x, hue 0x%04x, saturation 0x%04x",
+        //         param->value.state_change.hsl_set.lightness,
+        //         param->value.state_change.hsl_set.hue,
+        //         param->value.state_change.hsl_set.saturation);
+        //     /* Update bound states */
+        //     lightness = param->value.state_change.hsl_set.lightness;
+        //     state.light_lightness_actual.lightness = lightness;
+        //     esp_ble_mesh_server_model_update_state(lightness_server.model, ESP_BLE_MESH_LIGHT_LIGHTNESS_ACTUAL_STATE, &state);
+        //     state.light_lightness_linear.lightness = convert_lightness_actual_to_linear(lightness);
+        //     esp_ble_mesh_server_model_update_state(lightness_server.model, ESP_BLE_MESH_LIGHT_LIGHTNESS_LINEAR_STATE, &state);
+        //     state.gen_level.level = lightness - 32768;
+        //     esp_ble_mesh_server_model_update_state(level_server_0.model, ESP_BLE_MESH_GENERIC_LEVEL_STATE, &state);
+        //     state.gen_onoff.onoff = lightness ? LED_ON : LED_OFF;
+        //     esp_ble_mesh_server_model_update_state(onoff_server.model, ESP_BLE_MESH_GENERIC_ONOFF_STATE, &state);
+        //     state.light_ctl_lightness.lightness = lightness;
+        //     esp_ble_mesh_server_model_update_state(ctl_server.model, ESP_BLE_MESH_LIGHT_CTL_LIGHTNESS_STATE, &state);
+        //     break;
+        // case ESP_BLE_MESH_MODEL_OP_LIGHT_HSL_HUE_SET:
+        // case ESP_BLE_MESH_MODEL_OP_LIGHT_HSL_HUE_SET_UNACK:
+        //     /* Light HSL Hue Server Model - Secondary Element */
+        //     ESP_LOGI(TAG, "hue 0x%04x", param->value.state_change.hsl_hue_set.hue);
+        //     /* Update bound states */
+        //     state.gen_level.level = param->value.state_change.hsl_hue_set.hue - 32768;
+        //     esp_ble_mesh_server_model_update_state(level_server_1.model, ESP_BLE_MESH_GENERIC_LEVEL_STATE, &state);
+        //     break;
+        // case ESP_BLE_MESH_MODEL_OP_LIGHT_HSL_SATURATION_SET:
+        // case ESP_BLE_MESH_MODEL_OP_LIGHT_HSL_SATURATION_SET_UNACK:
+        //     /* Light HSL Saturation Server Model - Secondary Element */
+        //     ESP_LOGI(TAG, "saturation 0x%04x", param->value.state_change.hsl_saturation_set.saturation);
+        //     /* Update bound states */
+        //     state.gen_level.level = param->value.state_change.hsl_saturation_set.saturation - 32768;
+        //     esp_ble_mesh_server_model_update_state(level_server_2.model, ESP_BLE_MESH_GENERIC_LEVEL_STATE, &state);
+        //     break;
         }
         break;
     default:
